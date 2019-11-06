@@ -1,23 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import Head from 'next/head';
-import Nav from '../components/nav';
 
-const Home = () => (
+// next
+import { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+
+const Home: NextPage = () => (
   <div>
     <Head>
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <Nav />
-
     <div>
       <Title>Next.js! boilerplate</Title>
-      <p className="description">boiler</p>
-
       <div className="row">
-        <a href="https://nextjs.org/docs" className="card"></a>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
       </div>
     </div>
   </div>

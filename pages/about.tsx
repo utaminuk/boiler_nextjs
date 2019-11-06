@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+
+// next
+import { NextPage } from 'next';
 import Head from 'next/head';
 
-const About = () => (
+const About: NextPage = () => (
   <div>
     <Head>
       <title>About</title>
@@ -11,11 +14,12 @@ const About = () => (
 
     <div>
       <Title>Next.js! About</Title>
-      <p className="description">boiler</p>
 
-      <div className="row">
-        <a href="https://nextjs.org/docs" className="card"></a>
-      </div>
+      <ul>
+        <li>TypeScript利用が可能</li>
+        <li>styled-componentsが利用可能</li>
+        <li>デフォルトの404,500の差し替えページが用意されている</li>
+      </ul>
     </div>
   </div>
 );
