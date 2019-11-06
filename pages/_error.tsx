@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // next
-import { NextPage, NextPageContext } from 'next';
+import { NextPageContext } from 'next';
 import Head from 'next/head';
 
 type ErrorPropsType = {
