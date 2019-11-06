@@ -6,6 +6,9 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
+// components
+import Header from '../components/Header';
+
 const Home: NextPage = () => (
   <div>
     <Head>
@@ -13,6 +16,7 @@ const Home: NextPage = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
+    <Header />
     <div>
       <Title>Next.js! boilerplate</Title>
       <div className="row">
