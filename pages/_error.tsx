@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 // next
-import { NextPageContext } from 'next';
+import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
 
 type ErrorPropsType = {
   statusCode: number;
 };
 
-const Error = ({ statusCode }) => (
+const Error: NextPage<ErrorPropsType> = ({ statusCode }) => (
   <div>
     <Head>
       <title>Error</title>
@@ -22,7 +22,7 @@ const Error = ({ statusCode }) => (
   </div>
 );
 
-Error.getInitialProps = ({ res, err }: NextPageContext): ErrorPropsType => {
+Error.getInitialProps = async ({ res, err }: NextPageContext): Promise<ErrorPropsType> => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
 };
