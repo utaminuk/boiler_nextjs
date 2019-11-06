@@ -19,6 +19,7 @@ const About: NextPage = () => (
         <li>TypeScript利用が可能</li>
         <li>styled-componentsが利用可能</li>
         <li>デフォルトの404,500の差し替えページが用意されている</li>
+        <li>「~」を利用しての絶対パス指定ができる（例: ~/components/Hoge）</li>
       </ul>
     </div>
   </div>

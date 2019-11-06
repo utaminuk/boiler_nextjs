@@ -1,11 +1,9 @@
 const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
-  webpack: config => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '~': path.resolve(__dirname, './src')
-    };
+  webpack: (config, options) => {
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
     return config;
   }
 };
