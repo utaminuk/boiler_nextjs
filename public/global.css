@@ -1,0 +1,38 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  color: #334;
+}
+* {
+  box-sizing: border-box;
+}
+div,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+p,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th,
+form,
+input,
+textarea,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+}
