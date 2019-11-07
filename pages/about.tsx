@@ -5,14 +5,20 @@ import styled from 'styled-components';
 import { NextPage } from 'next';
 import Head from 'next/head';
 
+// components
+import Header from '~/components/Header';
+import Container from '~/components/Container';
+
 const About: NextPage = () => (
   <div>
     <Head>
       <title>About</title>
       <link rel="icon" href="/favicon.ico" />
+      <link href="/global.css" rel="stylesheet" />
     </Head>
 
-    <div>
+    <Header />
+    <Container>
       <Title>Next.js! About</Title>
 
       <ul>
@@ -21,7 +27,7 @@ const About: NextPage = () => (
         <li>デフォルトの404,500の差し替えページが用意されている</li>
         <li>「~」を利用しての絶対パス指定ができる（例: ~/components/Hoge）</li>
       </ul>
-    </div>
+    </Container>
   </div>
 );
 
