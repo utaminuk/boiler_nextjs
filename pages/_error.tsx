@@ -6,8 +6,7 @@ import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
 
 // components
-import Header from '~/components/Header';
-import Container from '~/components/Container';
+import LayoutDefault from '~/layout/Default';
 
 type ErrorPropsType = {
   statusCode: number;
@@ -21,18 +20,13 @@ const Error: NextPage<ErrorPropsType> = ({ statusCode }) => (
       <link href="/global.css" rel="stylesheet" />
     </Head>
 
-    <Header />
-
-    <Container>
+    <LayoutDefault>
       <Title>{statusCode}: エラーが発生しました</Title>
-    </Container>
+    </LayoutDefault>
   </div>
 );
 
-Error.getInitialProps = async ({
-  res,
-  err
-}: NextPageContext): Promise<ErrorPropsType> => {
+Error.getInitialProps = async ({ res, err }: NextPageContext): Promise<ErrorPropsType> => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
 };

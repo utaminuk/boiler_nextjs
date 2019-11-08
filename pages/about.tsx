@@ -6,8 +6,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 
 // components
-import Header from '~/components/Header';
-import Container from '~/components/Container';
+import LayoutDefault from '~/layout/Default';
 
 const About: NextPage = () => (
   <div>
@@ -17,8 +16,7 @@ const About: NextPage = () => (
       <link href="/global.css" rel="stylesheet" />
     </Head>
 
-    <Header />
-    <Container>
+    <LayoutDefault>
       <Title>Next.js! About</Title>
 
       <ul>
@@ -27,7 +25,7 @@ const About: NextPage = () => (
         <li>デフォルトの404,500の差し替えページが用意されている</li>
         <li>「~」を利用しての絶対パス指定ができる（例: ~/components/Hoge）</li>
       </ul>
-    </Container>
+    </LayoutDefault>
   </div>
 );
 

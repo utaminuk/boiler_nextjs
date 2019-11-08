@@ -6,8 +6,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 
 // components
-import Header from '~/components/Header';
-import Container from '~/components/Container';
+import LayoutDefault from '~/layout/Default';
 
 const Home: NextPage = () => (
   <div>
@@ -17,11 +16,10 @@ const Home: NextPage = () => (
       <link href="/global.css" rel="stylesheet" />
     </Head>
 
-    <Header />
-    <Container>
+    <LayoutDefault>
       <Title>Next.js! boilerplate</Title>
       <p>&nbsp;</p>
-    </Container>
+    </LayoutDefault>
   </div>
 );
 
