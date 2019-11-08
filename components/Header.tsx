@@ -53,7 +53,7 @@ const Item = styled.a`
   width: 100%;
   transition: background 0.2s;
   cursor: ${(props: ItemProps) => (props.selected ? 'default' : 'pointer')};
-  border-top: 3px solid ${(props: ItemProps) => (props.selected ? '#3f6' : 'transparent')};
+  border-top: 3px solid ${(props: ItemProps) => (props.selected ? '#396' : 'transparent')};
   background: ${(props: ItemProps) => (props.selected ? '#fff' : 'transparent')};
   &&:hover,
   &&:focus {

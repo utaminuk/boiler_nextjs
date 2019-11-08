@@ -17,14 +17,14 @@ const About: NextPage = () => (
     </Head>
 
     <LayoutDefault path="/about">
-      <Title>Next.js! About</Title>
+      <Title>どんな事が用意されているか</Title>
 
-      <ul>
-        <li>TypeScript利用が可能</li>
-        <li>styled-componentsが利用可能</li>
-        <li>デフォルトの404,500の差し替えページが用意されている</li>
-        <li>「~」を利用しての絶対パス指定ができる（例: ~/components/Hoge）</li>
-      </ul>
+      <List>
+        <Item>TypeScript利用が可能</Item>
+        <Item>styled-componentsが利用可能</Item>
+        <Item>デフォルトの404,500の差し替えページが用意されている</Item>
+        <Item>「~」を利用しての絶対パス指定ができる（例: ~/components/Hoge）</Item>
+      </List>
     </LayoutDefault>
   </div>
 );
@@ -32,6 +32,16 @@ const About: NextPage = () => (
 const Title = styled.h1`
   font-size: 24px;
   color: #334;
+`;
+
+const List = styled.ul`
+  margin: 20px 25px;
+`;
+const Item = styled.li`
+  font-size: 13px;
+  font-weight: 200;
+  line-height: 130%;
+  margin-bottom: 7px;
 `;
 
 export default About;
