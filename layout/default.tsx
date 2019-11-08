@@ -8,13 +8,20 @@ import { NextComponentType } from 'next';
 import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 
-const LayoutDefault: NextComponentType = props => (
-  <div>
-    <Header />
-    <Container>{props.children}</Container>
-    <Footer />
-  </div>
-);
+interface LayoutDefaultProps {
+  path: string;
+  children?: React.ReactNode;
+}
+
+const LayoutDefault = (props: LayoutDefaultProps) => {
+  return (
+    <React.Fragment>
+      <Header path={props.path} />
+      <Container>{props.children}</Container>
+      <Footer />
+    </React.Fragment>
+  );
+};
 
 const Container = styled.div`
   padding: 60px;

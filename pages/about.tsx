@@ -16,7 +16,7 @@ const About: NextPage = () => (
       <link href="/global.css" rel="stylesheet" />
     </Head>
 
-    <LayoutDefault>
+    <LayoutDefault path="/about">
       <Title>Next.js! About</Title>
 
       <ul>

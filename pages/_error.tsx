@@ -20,12 +20,13 @@ const Error: NextPage<ErrorPropsType> = ({ statusCode }) => (
       <link href="/global.css" rel="stylesheet" />
     </Head>
 
-    <LayoutDefault>
+    <LayoutDefault path="/error">
       <Title>{statusCode}: エラーが発生しました</Title>
     </LayoutDefault>
   </div>
 );
 
+// getInitialPropsはpagesのみ
 Error.getInitialProps = async ({ res, err }: NextPageContext): Promise<ErrorPropsType> => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };

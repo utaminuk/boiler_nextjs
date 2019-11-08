@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'next/router';
 import styled from 'styled-components';
 
 // next
@@ -16,9 +17,8 @@ const Home: NextPage = () => (
       <link href="/global.css" rel="stylesheet" />
     </Head>
 
-    <LayoutDefault>
+    <LayoutDefault path="/">
       <Title>Next.js! boilerplate</Title>
-      <p>&nbsp;</p>
     </LayoutDefault>
   </div>
 );
