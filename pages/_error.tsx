@@ -13,7 +13,7 @@ type ErrorPropsType = {
 };
 
 const Error: NextPage<ErrorPropsType> = ({ statusCode }) => (
-  <div>
+  <React.Fragment>
     <Head>
       <title>Error</title>
       <link rel="icon" href="/favicon.ico" />
@@ -23,7 +23,7 @@ const Error: NextPage<ErrorPropsType> = ({ statusCode }) => (
     <LayoutDefault path="/error">
       <Title>{statusCode}: エラーが発生しました</Title>
     </LayoutDefault>
-  </div>
+  </React.Fragment>
 );
 
 // getInitialPropsはpagesのみ

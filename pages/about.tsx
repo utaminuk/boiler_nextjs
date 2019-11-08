@@ -9,7 +9,7 @@ import Head from 'next/head';
 import LayoutDefault from '~/layout/Default';
 
 const About: NextPage = () => (
-  <div>
+  <React.Fragment>
     <Head>
       <title>About</title>
       <link rel="icon" href="/favicon.ico" />
@@ -26,7 +26,7 @@ const About: NextPage = () => (
         <Item>「~」を利用しての絶対パス指定ができる（例: ~/components/Hoge）</Item>
       </List>
     </LayoutDefault>
-  </div>
+  </React.Fragment>
 );
 
 const Title = styled.h1`

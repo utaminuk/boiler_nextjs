@@ -1,16 +1,17 @@
 import React from 'react';
-import { withRouter } from 'next/router';
+// import { withRouter } from 'next/router';
 import styled from 'styled-components';
 
 // next
 import { NextPage } from 'next';
+import Link from 'next/link';
 import Head from 'next/head';
 
 // components
 import LayoutDefault from '~/layout/Default';
 
 const Home: NextPage = () => (
-  <div>
+  <React.Fragment>
     <Head>
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
@@ -19,8 +20,16 @@ const Home: NextPage = () => (
 
     <LayoutDefault path="/">
       <Title>Next.js! boilerplate</Title>
+
+      <ul>
+        <li>
+          <Link href="/post/12">
+            <a>Post: 12</a>
+          </Link>
+        </li>
+      </ul>
     </LayoutDefault>
-  </div>
+  </React.Fragment>
 );
 
 const Title = styled.h1`
