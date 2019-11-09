@@ -7,25 +7,22 @@ interface LinksModel {
   label: string;
   key?: string;
 }
-const links: LinksModel[] = [
-  { href: '/about', label: 'About' },
-  { href: '/why', label: 'Why' }
-].map(link => {
+const links: LinksModel[] = [{ href: '/about', label: 'About' }].map(link => {
   link['key'] = `nav-link-${link.href}`;
   return link;
 });
 
-const Header = () => (
+const Header = (props: { path: string }) => (
   <Nav>
     <NavItem>
       <Link href="/">
-        <Item>Home</Item>
+        <Item selected={props.path === '/'}>Home</Item>
       </Link>
     </NavItem>
     {links.map(({ key, href, label }) => (
       <NavItem key={key}>
         <Link href={href}>
-          <Item>{label}</Item>
+          <Item selected={props.path === href}>{label}</Item>
         </Link>
       </NavItem>
     ))}
@@ -35,23 +32,29 @@ const Header = () => (
 const Nav = styled.ul`
   display: flex;
   list-style: none;
-  height: 40px;
+  height: 50px;
   background: #eee;
+  padding: 0 20px;
 `;
 
 const NavItem = styled.li`
   font-size: 14px;
-  line-height: 40px;
+  line-height: 50px;
 `;
 
+type ItemProps = {
+  selected: boolean;
+};
 const Item = styled.a`
-  padding: 0 10px;
+  padding: 0 15px;
   text-decoration: none;
   display: block;
-  line-height: 40px;
+  line-height: 47px;
   width: 100%;
-  cursor: pointer;
   transition: background 0.2s;
+  cursor: ${(props: ItemProps) => (props.selected ? 'default' : 'pointer')};
+  border-top: 3px solid ${(props: ItemProps) => (props.selected ? '#396' : 'transparent')};
+  background: ${(props: ItemProps) => (props.selected ? '#fff' : 'transparent')};
   &&:hover,
   &&:focus {
     background: #fafafa;

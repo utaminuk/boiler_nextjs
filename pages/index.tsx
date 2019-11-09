@@ -1,28 +1,35 @@
 import React from 'react';
+// import { withRouter } from 'next/router';
 import styled from 'styled-components';
 
 // next
 import { NextPage } from 'next';
+import Link from 'next/link';
 import Head from 'next/head';
 
 // components
-import Header from '~/components/Header';
-import Container from '~/components/Container';
+import LayoutDefault from '~/layout/Default';
 
 const Home: NextPage = () => (
-  <div>
+  <React.Fragment>
     <Head>
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
       <link href="/global.css" rel="stylesheet" />
     </Head>
 
-    <Header />
-    <Container>
+    <LayoutDefault path="/">
       <Title>Next.js! boilerplate</Title>
-      <p>&nbsp;</p>
-    </Container>
-  </div>
+
+      <ul>
+        <li>
+          <Link href="/post/12">
+            <a>Post: 12</a>
+          </Link>
+        </li>
+      </ul>
+    </LayoutDefault>
+  </React.Fragment>
 );
 
 const Title = styled.h1`

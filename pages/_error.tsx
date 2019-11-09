@@ -6,33 +6,28 @@ import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
 
 // components
-import Header from '~/components/Header';
-import Container from '~/components/Container';
+import LayoutDefault from '~/layout/Default';
 
 type ErrorPropsType = {
   statusCode: number;
 };
 
 const Error: NextPage<ErrorPropsType> = ({ statusCode }) => (
-  <div>
+  <React.Fragment>
     <Head>
       <title>Error</title>
       <link rel="icon" href="/favicon.ico" />
       <link href="/global.css" rel="stylesheet" />
     </Head>
 
-    <Header />
-
-    <Container>
+    <LayoutDefault path="/error">
       <Title>{statusCode}: エラーが発生しました</Title>
-    </Container>
-  </div>
+    </LayoutDefault>
+  </React.Fragment>
 );
 
-Error.getInitialProps = async ({
-  res,
-  err
-}: NextPageContext): Promise<ErrorPropsType> => {
+// getInitialPropsはpagesのみ
+Error.getInitialProps = async ({ res, err }: NextPageContext): Promise<ErrorPropsType> => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
 };
