@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 // import { withRouter } from 'next/router';
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // next
-import { NextPage } from 'next';
-import Link from 'next/link';
-import Head from 'next/head';
+import { NextPage } from "next";
+import Link from "next/link";
+import Head from "next/head";
 
 // components
-import LayoutDefault from '~/layout/Default';
+import LayoutDefault from "~/layout/Default";
 
 const Home: NextPage = () => (
   <React.Fragment>

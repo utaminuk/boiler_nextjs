@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 // next
-import { NextPage, NextPageContext } from 'next';
-import Head from 'next/head';
+import { NextPage, NextPageContext } from "next";
+import Head from "next/head";
 
 // components
-import LayoutDefault from '~/layout/Default';
+import LayoutDefault from "~/layout/Default";
 
 type ErrorPropsType = {
   statusCode: number;
@@ -27,7 +27,10 @@ const Error: NextPage<ErrorPropsType> = ({ statusCode }) => (
 );
 
 // getInitialPropsはpagesのみ
-Error.getInitialProps = async ({ res, err }: NextPageContext): Promise<ErrorPropsType> => {
+Error.getInitialProps = async ({
+  res,
+  err
+}: NextPageContext): Promise<ErrorPropsType> => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
 };
