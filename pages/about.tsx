@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 // next
-import { NextPage } from 'next';
-import Head from 'next/head';
+import { NextPage } from "next";
+import Head from "next/head";
 
 // components
-import LayoutDefault from '~/layout/Default';
+import LayoutDefault from "~/layout/Default";
 
 const About: NextPage = () => (
   <React.Fragment>
@@ -23,7 +23,9 @@ const About: NextPage = () => (
         <Item>TypeScript利用が可能</Item>
         <Item>styled-componentsが利用可能</Item>
         <Item>デフォルトの404,500の差し替えページが用意されている</Item>
-        <Item>「~」を利用しての絶対パス指定ができる（例: ~/components/Hoge）</Item>
+        <Item>
+          「~」を利用しての絶対パス指定ができる（例: ~/components/Hoge）
+        </Item>
       </List>
     </LayoutDefault>
   </React.Fragment>
